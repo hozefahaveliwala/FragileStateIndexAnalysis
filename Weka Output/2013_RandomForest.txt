@@ -1,0 +1,68 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     c_fsi-2013
+Instances:    178
+Attributes:   21
+              ﻿Year
+              Rank
+              Total
+              C1: Security Apparatus
+              C2: Factionalized Elites
+              C3: Group Grievance
+              E1: Economy
+              E2: Economic Inequality
+              E3: Human Flight and Brain Drain
+              P1: State Legitimacy
+              P2: Public Services
+              P3: Human Rights
+              S1: Demographic Pressures
+              S2: Refugees and IDPs
+              X1: External Intervention
+              T1: Global Peace Index
+              T2: Health
+              T3: Life Expectency
+              T4: IntrnationalTaxes
+              T5: FuelImports
+              T6: Fossil Fuel Energy
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 0.11 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         149               83.7079 %
+Incorrectly Classified Instances        29               16.2921 %
+Kappa statistic                          0.7455
+Mean absolute error                      0.2122
+Root mean squared error                  0.2799
+Relative absolute error                 62.9684 %
+Root relative squared error             68.2682 %
+Total Number of Instances              178     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.677    0.007    0.955      0.677    0.792      0.773    0.988     0.944     <109.28_133.4>
+                 0.966    0.231    0.800      0.966    0.875      0.747    0.958     0.956     <85.15_109.28)
+                 0.667    0.042    0.800      0.667    0.727      0.670    0.957     0.846     <61.02_85.15)
+                 0.833    0.006    0.952      0.833    0.889      0.875    0.997     0.982     <36.9_61.02)
+Weighted Avg.    0.837    0.123    0.847      0.837    0.833      0.753    0.968     0.935     
+
+=== Confusion Matrix ===
+
+  a  b  c  d   <-- classified as
+ 21 10  0  0 |  a = <109.28_133.4>
+  1 84  2  0 |  b = <85.15_109.28)
+  0 11 24  1 |  c = <61.02_85.15)
+  0  0  4 20 |  d = <36.9_61.02)
+

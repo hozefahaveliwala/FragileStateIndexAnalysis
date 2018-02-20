@@ -1,0 +1,74 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.JRip -F 3 -N 2.0 -O 2 -S 1
+Relation:     c_fsi-2013
+Instances:    178
+Attributes:   21
+              ﻿Year
+              Rank
+              Total
+              C1: Security Apparatus
+              C2: Factionalized Elites
+              C3: Group Grievance
+              E1: Economy
+              E2: Economic Inequality
+              E3: Human Flight and Brain Drain
+              P1: State Legitimacy
+              P2: Public Services
+              P3: Human Rights
+              S1: Demographic Pressures
+              S2: Refugees and IDPs
+              X1: External Intervention
+              T1: Global Peace Index
+              T2: Health
+              T3: Life Expectency
+              T4: IntrnationalTaxes
+              T5: FuelImports
+              T6: Fossil Fuel Energy
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+JRIP rules:
+===========
+
+(P1: State Legitimacy <= 3.2) => Total=<36.9_61.02) (24.0/1.0)
+(C2: Factionalized Elites >= 8.6) => Total=<109.28_133.4> (32.0/5.0)
+(P2: Public Services <= 4.6) and (C2: Factionalized Elites <= 6.6) => Total=<61.02_85.15) (27.0/1.0)
+(S2: Refugees and IDPs <= 4.1) and (T1: Global Peace Index <= 4.8) and (C1: Security Apparatus <= 5.7) => Total=<61.02_85.15) (7.0/0.0)
+ => Total=<85.15_109.28) (88.0/6.0)
+
+Number of Rules : 5
+
+
+Time taken to build model: 0.18 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         136               76.4045 %
+Incorrectly Classified Instances        42               23.5955 %
+Kappa statistic                          0.6455
+Mean absolute error                      0.1385
+Root mean squared error                  0.3247
+Relative absolute error                 41.1198 %
+Root relative squared error             79.2166 %
+Total Number of Instances              178     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.774    0.061    0.727      0.774    0.750      0.696    0.895     0.633     <109.28_133.4>
+                 0.816    0.220    0.780      0.816    0.798      0.596    0.821     0.773     <85.15_109.28)
+                 0.556    0.070    0.667      0.556    0.606      0.521    0.748     0.532     <61.02_85.15)
+                 0.875    0.019    0.875      0.875    0.875      0.856    0.934     0.719     <36.9_61.02)
+Weighted Avg.    0.764    0.135    0.761      0.764    0.761      0.633    0.834     0.692     
+
+=== Confusion Matrix ===
+
+  a  b  c  d   <-- classified as
+ 24  7  0  0 |  a = <109.28_133.4>
+  9 71  7  0 |  b = <85.15_109.28)
+  0 13 20  3 |  c = <61.02_85.15)
+  0  0  3 21 |  d = <36.9_61.02)
+

@@ -1,0 +1,100 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.PART -M 2 -C 0.25 -Q 1
+Relation:     c_fsi-2012
+Instances:    178
+Attributes:   21
+              ﻿Year
+              Rank
+              new_TOTAL
+              C1: Security Apparatus
+              C2: Factionalized Elites
+              C3: Group Grievance
+              E1: Economy
+              E2: Economic Inequality
+              E3: Human Flight and Brain Drain
+              P1: State Legitimacy
+              P2: Public Services
+              P3: Human Rights
+              S1: Demographic Pressures
+              S2: Refugees and IDPs
+              X1: External Intervention
+              T1: Global Peace Index
+              T2: Health
+              T3: Life Expectency
+              T4: IntrnationalTaxes
+              T5: FuelImports
+              T6: Fossil Fuel Energy
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+PART decision list
+------------------
+
+C1: Security Apparatus > 4.9 AND
+C2: Factionalized Elites > 8.3 AND
+T1: Global Peace Index > 5.05: <108.05_131.18> (27.0/1.0)
+
+P1: State Legitimacy <= 4.3 AND
+S1: Demographic Pressures <= 3: <38.66_61.79) (20.0)
+
+P3: Human Rights <= 4.4 AND
+C1: Security Apparatus > 2.3: <61.79_84.92) (25.0/1.0)
+
+P2: Public Services > 3.8 AND
+E3: Human Flight and Brain Drain > 2.8 AND
+X1: External Intervention <= 8.9 AND
+E3: Human Flight and Brain Drain <= 7.5 AND
+C2: Factionalized Elites <= 8: <84.92_108.05) (63.0)
+
+C2: Factionalized Elites > 7.5 AND
+P3: Human Rights <= 8: <84.92_108.05) (11.0)
+
+C1: Security Apparatus > 6.5 AND
+X1: External Intervention > 7.1: <108.05_131.18> (7.0/1.0)
+
+C1: Security Apparatus > 3 AND
+E3: Human Flight and Brain Drain <= 5.4: <61.79_84.92) (9.0)
+
+P2: Public Services > 3.9 AND
+C1: Security Apparatus > 5.7: <84.92_108.05) (7.0)
+
+P2: Public Services > 3.9: <61.79_84.92) (5.0/1.0)
+
+: <38.66_61.79) (4.0)
+
+Number of Rules  : 	10
+
+
+Time taken to build model: 0.04 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         144               80.8989 %
+Incorrectly Classified Instances        34               19.1011 %
+Kappa statistic                          0.7168
+Mean absolute error                      0.102 
+Root mean squared error                  0.3055
+Relative absolute error                 29.9985 %
+Root relative squared error             74.1438 %
+Total Number of Instances              178     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.781    0.055    0.758      0.781    0.769      0.718    0.867     0.591     <108.05_131.18>
+                 0.847    0.161    0.828      0.847    0.837      0.685    0.832     0.786     <84.92_108.05)
+                 0.730    0.064    0.750      0.730    0.740      0.673    0.842     0.601     <61.79_84.92)
+                 0.833    0.013    0.909      0.833    0.870      0.851    0.938     0.800     <38.66_61.79)
+Weighted Avg.    0.809    0.102    0.810      0.809    0.809      0.711    0.855     0.715     
+
+=== Confusion Matrix ===
+
+  a  b  c  d   <-- classified as
+ 25  7  0  0 |  a = <108.05_131.18>
+  8 72  5  0 |  b = <84.92_108.05)
+  0  8 27  2 |  c = <61.79_84.92)
+  0  0  4 20 |  d = <38.66_61.79)
+

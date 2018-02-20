@@ -1,0 +1,96 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.PART -M 2 -C 0.25 -Q 1
+Relation:     c_fsi-2013
+Instances:    178
+Attributes:   21
+              ﻿Year
+              Rank
+              Total
+              C1: Security Apparatus
+              C2: Factionalized Elites
+              C3: Group Grievance
+              E1: Economy
+              E2: Economic Inequality
+              E3: Human Flight and Brain Drain
+              P1: State Legitimacy
+              P2: Public Services
+              P3: Human Rights
+              S1: Demographic Pressures
+              S2: Refugees and IDPs
+              X1: External Intervention
+              T1: Global Peace Index
+              T2: Health
+              T3: Life Expectency
+              T4: IntrnationalTaxes
+              T5: FuelImports
+              T6: Fossil Fuel Energy
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+PART decision list
+------------------
+
+S1: Demographic Pressures <= 3.8 AND
+P1: State Legitimacy <= 3.2: <36.9_61.02) (23.0)
+
+C2: Factionalized Elites > 8 AND
+S2: Refugees and IDPs > 8.5: <109.28_133.4> (17.0)
+
+P3: Human Rights > 4.1 AND
+C1: Security Apparatus <= 7.2 AND
+E3: Human Flight and Brain Drain > 4.6 AND
+T1: Global Peace Index > 0: <85.15_109.28) (52.0)
+
+C1: Security Apparatus <= 5.7 AND
+E2: Economic Inequality <= 6.9: <61.02_85.15) (32.0/1.0)
+
+S2: Refugees and IDPs <= 5.8 AND
+C2: Factionalized Elites > 5.7: <85.15_109.28) (20.0/1.0)
+
+S2: Refugees and IDPs > 3.8 AND
+P3: Human Rights <= 7.8 AND
+C2: Factionalized Elites <= 8.8: <85.15_109.28) (13.0)
+
+C2: Factionalized Elites > 6.8 AND
+T1: Global Peace Index > 0: <109.28_133.4> (15.0/1.0)
+
+P1: State Legitimacy <= 7.6: <61.02_85.15) (4.0)
+
+: <85.15_109.28) (2.0)
+
+Number of Rules  : 	9
+
+
+Time taken to build model: 0.03 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         142               79.7753 %
+Incorrectly Classified Instances        36               20.2247 %
+Kappa statistic                          0.6968
+Mean absolute error                      0.1083
+Root mean squared error                  0.3139
+Relative absolute error                 32.1549 %
+Root relative squared error             76.5765 %
+Total Number of Instances              178     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.677    0.041    0.778      0.677    0.724      0.673    0.847     0.650     <109.28_133.4>
+                 0.816    0.198    0.798      0.816    0.807      0.618    0.822     0.760     <85.15_109.28)
+                 0.778    0.085    0.700      0.778    0.737      0.667    0.854     0.573     <61.02_85.15)
+                 0.917    0.000    1.000      0.917    0.957      0.951    0.972     0.948     <36.9_61.02)
+Weighted Avg.    0.798    0.121    0.802      0.798    0.798      0.683    0.853     0.728     
+
+=== Confusion Matrix ===
+
+  a  b  c  d   <-- classified as
+ 21 10  0  0 |  a = <109.28_133.4>
+  6 71 10  0 |  b = <85.15_109.28)
+  0  8 28  0 |  c = <61.02_85.15)
+  0  0  2 22 |  d = <36.9_61.02)
+

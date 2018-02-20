@@ -1,0 +1,97 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     c_fsi-2013
+Instances:    178
+Attributes:   21
+              ﻿Year
+              Rank
+              Total
+              C1: Security Apparatus
+              C2: Factionalized Elites
+              C3: Group Grievance
+              E1: Economy
+              E2: Economic Inequality
+              E3: Human Flight and Brain Drain
+              P1: State Legitimacy
+              P2: Public Services
+              P3: Human Rights
+              S1: Demographic Pressures
+              S2: Refugees and IDPs
+              X1: External Intervention
+              T1: Global Peace Index
+              T2: Health
+              T3: Life Expectency
+              T4: IntrnationalTaxes
+              T5: FuelImports
+              T6: Fossil Fuel Energy
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+S1: Demographic Pressures <= 3.8
+|   P1: State Legitimacy <= 3.2: <36.9_61.02) (23.0)
+|   P1: State Legitimacy > 3.2: <61.02_85.15) (13.0/1.0)
+S1: Demographic Pressures > 3.8
+|   C2: Factionalized Elites <= 8
+|   |   P3: Human Rights <= 4.1: <61.02_85.15) (12.0/1.0)
+|   |   P3: Human Rights > 4.1
+|   |   |   S2: Refugees and IDPs <= 4.5
+|   |   |   |   C1: Security Apparatus <= 5.7
+|   |   |   |   |   T1: Global Peace Index <= 4.825: <61.02_85.15) (10.0)
+|   |   |   |   |   T1: Global Peace Index > 4.825: <85.15_109.28) (4.0/1.0)
+|   |   |   |   C1: Security Apparatus > 5.7
+|   |   |   |   |   C2: Factionalized Elites <= 5.7
+|   |   |   |   |   |   E3: Human Flight and Brain Drain <= 5.4: <61.02_85.15) (2.0)
+|   |   |   |   |   |   E3: Human Flight and Brain Drain > 5.4: <85.15_109.28) (3.0)
+|   |   |   |   |   C2: Factionalized Elites > 5.7: <85.15_109.28) (12.0)
+|   |   |   S2: Refugees and IDPs > 4.5: <85.15_109.28) (55.0/1.0)
+|   C2: Factionalized Elites > 8
+|   |   S2: Refugees and IDPs <= 8.5
+|   |   |   C1: Security Apparatus <= 7.2: <85.15_109.28) (6.0)
+|   |   |   C1: Security Apparatus > 7.2
+|   |   |   |   C3: Group Grievance <= 7.3: <85.15_109.28) (6.0/1.0)
+|   |   |   |   C3: Group Grievance > 7.3
+|   |   |   |   |   E3: Human Flight and Brain Drain <= 5.6: <85.15_109.28) (4.0/1.0)
+|   |   |   |   |   E3: Human Flight and Brain Drain > 5.6: <109.28_133.4> (11.0)
+|   |   S2: Refugees and IDPs > 8.5: <109.28_133.4> (17.0)
+
+Number of Leaves  : 	14
+
+Size of the tree : 	27
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         142               79.7753 %
+Incorrectly Classified Instances        36               20.2247 %
+Kappa statistic                          0.6971
+Mean absolute error                      0.1094
+Root mean squared error                  0.3048
+Relative absolute error                 32.4665 %
+Root relative squared error             74.3477 %
+Total Number of Instances              178     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.710    0.061    0.710      0.710    0.710      0.648    0.829     0.573     <109.28_133.4>
+                 0.816    0.198    0.798      0.816    0.807      0.618    0.821     0.733     <85.15_109.28)
+                 0.750    0.063    0.750      0.750    0.750      0.687    0.890     0.700     <61.02_85.15)
+                 0.917    0.000    1.000      0.917    0.957      0.951    0.974     0.950     <36.9_61.02)
+Weighted Avg.    0.798    0.120    0.800      0.798    0.799      0.682    0.857     0.728     
+
+=== Confusion Matrix ===
+
+  a  b  c  d   <-- classified as
+ 22  9  0  0 |  a = <109.28_133.4>
+  9 71  7  0 |  b = <85.15_109.28)
+  0  9 27  0 |  c = <61.02_85.15)
+  0  0  2 22 |  d = <36.9_61.02)
+

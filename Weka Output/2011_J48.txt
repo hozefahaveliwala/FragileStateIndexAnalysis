@@ -1,0 +1,99 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     c_fsi-2011
+Instances:    177
+Attributes:   21
+              ﻿Year
+              Rank
+              new_TOTAL
+              C1: Security Apparatus
+              C2: Factionalized Elites
+              C3: Group Grievance
+              E1: Economy
+              E2: Economic Inequality
+              E3: Human Flight and Brain Drain
+              P1: State Legitimacy
+              P2: Public Services
+              P3: Human Rights
+              S1: Demographic Pressures
+              S2: Refugees and IDPs
+              X1: External Intervention
+              T1: Global Peace Index
+              T2: Health
+              T3: Life Expectency
+              T4: IntrnationalTaxes
+              T5: FuelImports
+              T6: Fossil Fuel Energy
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+S1: Demographic Pressures <= 4.3
+|   E1: Economy <= 4: <38.783_61.642) (23.0)
+|   E1: Economy > 4
+|   |   E2: Economic Inequality <= 3.6: <38.783_61.642) (2.0)
+|   |   E2: Economic Inequality > 3.6: <61.642_84.501) (16.0)
+S1: Demographic Pressures > 4.3
+|   S2: Refugees and IDPs <= 8
+|   |   C3: Group Grievance <= 4.9
+|   |   |   P2: Public Services <= 6.9
+|   |   |   |   T6: Fossil Fuel Energy <= 5.456871: <61.642_84.501) (12.0)
+|   |   |   |   T6: Fossil Fuel Energy > 5.456871
+|   |   |   |   |   E3: Human Flight and Brain Drain <= 5.2: <61.642_84.501) (5.0)
+|   |   |   |   |   E3: Human Flight and Brain Drain > 5.2: <84.501_107.361) (3.0)
+|   |   |   P2: Public Services > 6.9: <84.501_107.361) (5.0)
+|   |   C3: Group Grievance > 4.9
+|   |   |   C1: Security Apparatus <= 7.6
+|   |   |   |   S1: Demographic Pressures <= 5.2
+|   |   |   |   |   C3: Group Grievance <= 6.6: <61.642_84.501) (3.0)
+|   |   |   |   |   C3: Group Grievance > 6.6: <84.501_107.361) (4.0)
+|   |   |   |   S1: Demographic Pressures > 5.2: <84.501_107.361) (62.0/1.0)
+|   |   |   C1: Security Apparatus > 7.6
+|   |   |   |   P3: Human Rights <= 7: <84.501_107.361) (6.0)
+|   |   |   |   P3: Human Rights > 7
+|   |   |   |   |   P1: State Legitimacy <= 9.5
+|   |   |   |   |   |   T1: Global Peace Index <= 5.275: <84.501_107.361) (3.0/1.0)
+|   |   |   |   |   |   T1: Global Peace Index > 5.275: <107.361_130.22> (10.0)
+|   |   |   |   |   P1: State Legitimacy > 9.5: <84.501_107.361) (3.0)
+|   S2: Refugees and IDPs > 8: <107.361_130.22> (20.0/1.0)
+
+Number of Leaves  : 	15
+
+Size of the tree : 	29
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         137               77.4011 %
+Incorrectly Classified Instances        40               22.5989 %
+Kappa statistic                          0.6693
+Mean absolute error                      0.1202
+Root mean squared error                  0.3228
+Relative absolute error                 35.3711 %
+Root relative squared error             78.3896 %
+Total Number of Instances              177     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.774    0.062    0.727      0.774    0.750      0.695    0.876     0.682     <107.361_130.22>
+                 0.765    0.174    0.802      0.765    0.783      0.592    0.817     0.728     <84.501_107.361)
+                 0.750    0.092    0.675      0.750    0.711      0.633    0.843     0.623     <61.642_84.501)
+                 0.840    0.013    0.913      0.840    0.875      0.856    0.951     0.863     <38.783_61.642)
+Weighted Avg.    0.774    0.115    0.779      0.774    0.776      0.656    0.852     0.717     
+
+=== Confusion Matrix ===
+
+  a  b  c  d   <-- classified as
+ 24  7  0  0 |  a = <107.361_130.22>
+  9 65 10  1 |  b = <84.501_107.361)
+  0  8 27  1 |  c = <61.642_84.501)
+  0  1  3 21 |  d = <38.783_61.642)
+
